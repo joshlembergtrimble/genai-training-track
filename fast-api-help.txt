@@ -1,0 +1,5 @@
+# Interactive documentation
+# Free swagger page!!!
+localhost:8000/docs#/
+
+localhost:8000/redoc

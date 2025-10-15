@@ -1,0 +1,40 @@
+# Initalize a uv project
+uv init project-name
+uv init --python 3.13 project-name
+
+# Add dependencies
+uv add package-name
+uv remove package-name
+
+# Add optional dependencies
+uv add package-name --optional optional-section-name
+uv add package-name --dev # For development dependencies
+
+# Sync dependencies
+# used for if you just downloaded this code or something and want to sync up and get everything in lock file
+uv sync
+
+# Run 
+uv run main.py
+uv run --no-project example.py # if you don't need the project stuff
+
+# Python management
+uv python list
+uv python install 3.13
+uv python uninstall 3.13
+uv python list --only-installed
+
+# view dependency tree
+uv tree
+
+# running scripts
+uv run --with requests example.py # not sure about this one, seems unclean but need more research
+
+# Inline metadata
+uv add --script example.py 'requests'
+
+# Create empty venv
+uv venv
+
+# clear uv cache
+uv cache clean
