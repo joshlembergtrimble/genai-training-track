@@ -1,0 +1,22 @@
+[11/10/25 21:19:53] INFO     HTTP Request: GET                  _client.py:1025
+                             https://lm-api-reads.fantasy.espn.                
+                             com/apis/v3/games/ffl/seasons/2024                
+                             /segments/0/leagues/747820582?view                
+                             =mTeam&view=mRoster "HTTP/1.1 401                 
+                             "                                                 
+https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2024/segments/0/leagues/747820582
+Loaded 58 cookies from file
+SWID found: {1ABB0930-509F-4DBF-ABE8-7B0BF...
+espn_s2 found: AEAU5wYJjkLyrnaKAt30DqQPWN4eNQ...
+Response status: 401
+Traceback (most recent call last):
+  File "C:\Users\jlemberg\work\trimble\genai-training-track\my-mcp\fantasy.py", line 131, in <module>
+    get_fantasy_team()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jlemberg\work\trimble\genai-training-track\my-mcp\fantasy.py", line 85, in get_fantasy_team
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jlemberg\work\trimble\genai-training-track\my-mcp\.venv\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 ' for url 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2024/segments/0/leagues/747820582?view=mTeam&view=mRoster'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
