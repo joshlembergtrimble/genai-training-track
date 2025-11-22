@@ -8,13 +8,13 @@ from pydantic_ai.providers.azure import AzureProvider
 from pydantic_ai.mcp import MCPServerStdio, MCPServerSSE, MCPServerStreamableHTTP, CallToolFunc, MCPServerStdio, ToolResult
 from pydantic_ai import Agent, RunContext
 
-from myagent import MyAgent
+from core import MyAgent
 
 import os
 import dotenv
 dotenv.load_dotenv()
 
-AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT")
 AZURE_OPENAI_API_KEY=os.environ.get("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_API_VERSION=os.environ.get("AZURE_OPENAI_API_VERSION")
 
@@ -51,7 +51,7 @@ class Container(containers.DeclarativeContainer):
     weather_server = providers.Factory(
         MCPServerStdio,
         command='uv',
-        args=['run', '../my-mcp/weather.py', 'stdio'], 
+        args=['run', 'my_mcp/weather.py', 'stdio'], 
         timeout=10.0,
         tool_prefix='weather'
     )
@@ -59,7 +59,7 @@ class Container(containers.DeclarativeContainer):
     espn_fantasy_server = providers.Factory(
         MCPServerStdio,
         command='uv',
-        args=['run', '../my-mcp/espn_fantasy.py', 'stdio'], 
+        args=['run', 'my_mcp/espn_fantasy.py', 'stdio'], 
         timeout=10.0,
         tool_prefix='espn'
     )
@@ -67,7 +67,7 @@ class Container(containers.DeclarativeContainer):
     sleeper_fantasy_server = providers.Factory(
         MCPServerStdio,
         command='uv',
-        args=['run', '../my-mcp/sleeper_fantasy.py', 'stdio'], 
+        args=['run', 'my_mcp/sleeper_fantasy.py', 'stdio'], 
         timeout=10.0,
         tool_prefix="sleeper"
     )
@@ -75,7 +75,7 @@ class Container(containers.DeclarativeContainer):
     deps_server = providers.Factory(
         MCPServerStdio,
         command='uv',
-        args=['run', '../my-mcp/mcp_with_deps.py', 'stdio'], 
+        args=['run', 'my_mcp/mcp_with_deps.py', 'stdio'], 
         timeout=10.0,
         tool_prefix="deps",
         process_tool_call=process_tool_call

@@ -1,0 +1,19 @@
+[project]
+name = "genai-training-track"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dependency-injector>=4.48.2",
+    "pydantic-ai>=1.19.0",
+    "pydantic-ai-slim[duckduckgo,mcp]>=1.19.0",
+    "requests>=2.32.5",
+    "fastapi>=0.121.2",
+    "uvicorn>=0.38.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.21.2",
+    "streamlit>=1.51.0",
+]
+
+[dependency-groups]

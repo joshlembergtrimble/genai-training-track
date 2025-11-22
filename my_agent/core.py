@@ -14,15 +14,17 @@ class MyAgent:
                             system_prompt=(f"You are a helpful assistant")
                             )
 
+
     def basic_query_test(self):
-        query = "Hey can you echo the deps?"
+        query = "What is the HR policy?"
 
         print("--- MAKING THE AGENT CALL ---")
-        response = self.agent.run_sync(query, deps=42)
+        response = self.agent.run_sync(query)
         return response.output
 
     async def basic_query_test_async(self, query='Explain how to use structured outputs in Pydantic AI in a short response.'):
         result = await self.agent.run(query)
         return result.output
+
 
 # IDEA: Subagent to analyze each team, main orchestrator to make a power ranking
