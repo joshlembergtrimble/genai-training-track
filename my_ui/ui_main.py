@@ -5,7 +5,7 @@ import os
 # API endpoint configuration
 API_URL = os.getenv("API_URL", "http://localhost:8000")
 
-st.title("Echo Bot")
+st.title("Josh's Chat Bot")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -24,13 +24,14 @@ if prompt:
 
     # Call the agent API
     try:
-        response = requests.post(
-            f"{API_URL}/chat",
-            json={"query": prompt},
-            timeout=30
-        )
-        response.raise_for_status()
-        result = response.json()["response"]
+        with st.spinner("The Agent is running...", show_time=True):
+            response = requests.post(
+                f"{API_URL}/chat",
+                json={"query": prompt},
+                timeout=30
+            )
+            response.raise_for_status()
+            result = response.json()["response"]
     except requests.exceptions.RequestException as e:
         result = f"Error connecting to agent: {str(e)}"
     
