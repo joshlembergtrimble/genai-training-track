@@ -1,12 +1,11 @@
-import logging
 from typing import Any
 
 from dependency_injector import containers, providers
 
 from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.azure import AzureProvider
-from pydantic_ai.mcp import MCPServerStdio, MCPServerSSE, MCPServerStreamableHTTP, CallToolFunc, MCPServerStdio, ToolResult
-from pydantic_ai import Agent, RunContext
+from pydantic_ai.mcp import CallToolFunc, MCPServerStdio, ToolResult
+from pydantic_ai import RunContext
 
 from core import MyAgent
 

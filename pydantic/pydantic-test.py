@@ -1,5 +1,5 @@
-from pydantic import BaseModel, field_validator
-from typing import Literal
+from pydantic import BaseModel
+
 
 class User(BaseModel):
     idnum: int
@@ -13,5 +13,4 @@ class User(BaseModel):
     #     return value
 
 
-
-u = User(idnum=8, username='josh')
+u = User(idnum=8, username="josh")

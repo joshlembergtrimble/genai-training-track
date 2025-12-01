@@ -1,6 +1,5 @@
 from pydantic_ai import Agent
 from pydantic_ai.models.openai import OpenAIChatModel
-from pydantic_ai.providers.azure import AzureProvider
 from pydantic_ai.mcp import MCPServerStdio, MCPServerSSE, MCPServerStreamableHTTP
 from pydantic_ai.common_tools.duckduckgo import duckduckgo_search_tool
 import chromadb
@@ -12,7 +11,7 @@ class MyAgent:
                             toolsets=mcp_servers, 
                             tools=[duckduckgo_search_tool()],
                             deps_type=int,
-                            system_prompt=(f"You are a helpful assistant")
+                            system_prompt=("You are a helpful assistant")
                             )
 
         self._register_tools()

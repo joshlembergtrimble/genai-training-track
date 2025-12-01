@@ -19,3 +19,6 @@ dependencies = [
 ]
 
 [dependency-groups]
+
+[tool.ruff.lint]
+ignore = ["F541"]

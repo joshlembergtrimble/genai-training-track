@@ -1,7 +1,6 @@
 from typing import Any
 import httpx
 from mcp.server.fastmcp import FastMCP
-import json
 
 # Initialize FastMCP server
 '''
@@ -20,7 +19,7 @@ async def make_sleeper_request(url: str) -> dict[str, Any] | list[dict[str, Any]
             response = await client.get(url, timeout=30.0)
             response.raise_for_status()
             return response.json()
-        except Exception as e:
+        except Exception:
             return None
 
 @mcp.tool()

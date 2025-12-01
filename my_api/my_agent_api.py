@@ -1,8 +1,7 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 from typing import Literal
 from my_agent.containers import Container
-import traceback
 import logging
 
 logging.basicConfig(level=logging.INFO)

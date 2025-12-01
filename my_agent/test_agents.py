@@ -3,17 +3,17 @@ from pydantic_ai import Agent, RunContext
 import os
 import requests
 import random
-import dotenv
-dotenv.load_dotenv()
 
 from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.azure import AzureProvider
-from pydantic_ai.common_tools.duckduckgo import duckduckgo_search_tool
 
 from pydantic import BaseModel, Field, ValidationError
 from typing import List, Optional
 
 import asyncio
+
+import dotenv
+dotenv.load_dotenv()
 
 # Load environment variables
 AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_ENDPOINT")

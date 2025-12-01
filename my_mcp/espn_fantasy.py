@@ -7,8 +7,6 @@ to retrieve league data, team information, matchups, and player statistics.
 
 import httpx
 from typing import Dict, List, Optional, Any
-import json
-from pathlib import Path
 import re
 from mcp.server.fastmcp import FastMCP
 
@@ -60,7 +58,7 @@ def make_request(params: Optional[Dict] = None) -> Dict[str, Any]:
         )
         response.raise_for_status()
         return response.json()
-    except httpx.HTTPError as e:
+    except httpx.HTTPError:
         raise
 
 @mcp.tool()
